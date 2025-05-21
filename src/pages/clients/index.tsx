@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Search, Plus, Filter, ArrowUpDown, MoreHorizontal, UserPlus } from 'lucide-react';
+import { Search, Filter, MoreHorizontal, UserPlus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -30,12 +29,10 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog';
-import { Label } from '@/components/ui/label';
+// import { Label } from '@/components/ui/label';
 import ClientDialogForm from './client-dialog-form';
 
 // Sample client data

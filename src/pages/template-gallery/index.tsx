@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Filter, Search, Info, FileText, Check } from 'lucide-react';
+import { Filter, Search, Info, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -9,7 +9,6 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
 import TemplateCard from './template-card';
 
 // Template data

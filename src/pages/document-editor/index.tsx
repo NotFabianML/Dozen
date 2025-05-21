@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { Save, FileDown, Send, Eye, History, PlusCircle, Trash, ArrowLeft } from 'lucide-react';
+// import { useParams } from 'react-router-dom';
+import { Save, FileDown, Send, PlusCircle, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import {
@@ -33,7 +33,7 @@ const initialDocument = {
 };
 
 export default function DocumentEditor() {
-  const { id = 'new' } = useParams<{ id: string }>();
+  // const { id = 'new' } = useParams<{ id: string }>();
   const [document, setDocument] = useState(initialDocument);
   const [saving, setSaving] = useState(false);
 

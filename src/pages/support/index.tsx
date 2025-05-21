@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Search, Tv, MessageSquare, PhoneCall, Mail, Megaphone, Lightbulb, Plus, Minus } from 'lucide-react';
+
+import { Search, Tv, MessageSquare, PhoneCall, Mail, Megaphone, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FileEdit, MoreHorizontal, Download, Send, Trash, Copy } from 'lucide-react';
 import {
@@ -59,7 +59,8 @@ type RecentDocumentsProps = {
 };
 
 export default function RecentDocuments({ className }: RecentDocumentsProps) {
-  const [documents, setDocuments] = useState(recentDocuments);
+  // const [documents, setDocuments] = useState(recentDocuments);
+  const documents = recentDocuments;
 
   const statusColors = {
     draft: 'bg-muted text-muted-foreground',

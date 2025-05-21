@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+/* ---------------------------------------------------
+   Suavizado de fuentes y optimización de texto
+   --------------------------------------------------- */
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------------------------------------------------
+   Mapeo de variables para utilidades (fonts y colores)
+   --------------------------------------------------- */
+@theme inline {
+  /* Fuentes */
+  --font-anton: "Anton", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+
+  /* Colores principales */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+   /* Mapeo de tu paleta personalizada */
+   --color-primary: hsl(var(--primary));
+   --color-primary-foreground: hsl(var(--primary-foreground));
+   --color-secondary: hsl(var(--secondary));
+   --color-secondary-foreground: hsl(var(--secondary-foreground));
+   --color-accent: hsl(var(--accent));
+   --color-accent-foreground: hsl(var(--accent-foreground));
+ 
+   /* Estados de alerta y éxito */
+   --color-destructive: hsl(var(--destructive));
+   --color-destructive-foreground: hsl(var(--destructive-foreground));
+   --color-success: hsl(var(--success));
+   --color-success-foreground: hsl(var(--success-foreground));
+   --color-warning: hsl(var(--warning));
+   --color-warning-foreground: hsl(var(--warning-foreground));
+   --color-muted: hsl(var(--muted));
+   --color-muted-foreground: hsl(var(--muted-foreground));
+ 
+   /* Bordes, inputs y anillos */
+   --color-border: hsl(var(--border));
+   --color-input: hsl(var(--input));
+   --color-ring: hsl(var(--ring));
+}
+
+/* ---------------------------------------------------
+   Tokens de diseño (tema oscuro por defecto)
+   --------------------------------------------------- */
+@theme {
+  /* Fondo y texto */
+  --background: 240 8% 9%;
+  --foreground: 0 0% 98%;
+
+  /* Cartas y popovers */
+  --card: 240 6% 10%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 6% 10%;
+  --popover-foreground: 0 0% 98%;
+
+  /* Paleta principal */
+  --primary: 146 100% 59%;
+  --primary-foreground: 240 8% 3%;
+
+  /* Secundarios y acentos */
+  --secondary: 36 9% 89%;
+  --secondary-foreground: 240 8% 3%;
+  --accent: 214 98% 59%;
+  --accent-foreground: 0 0% 98%;
+
+  /* Estados (muted, success, warning, destructive) */
+  --muted: 240 6% 20%;
+  --muted-foreground: 240 4% 75%;
+  --success: 146 100% 59%;
+  --success-foreground: 240 8% 3%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 240 8% 3%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  /* Borders, inputs, anillos y radios */
+  --border: 240 6% 20%;
+  --input: 240 6% 20%;
+  --ring: 146 100% 59%;
+  --radius: 0.5rem;
+}
+
+/* ---------------------------------------------------
+   Tema claro (clase `.light` en el root)
+   --------------------------------------------------- */
+.light {
+  --background: 0 0% 98%;
+  --foreground: 240 8% 9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 240 8% 9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 8% 9%;
+
+  --primary: 146 100% 45%;
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 36 9% 89%;
+  --secondary-foreground: 240 8% 9%;
+  --accent: 214 98% 50%;
+  --accent-foreground: 0 0% 98%;
+
+  --muted: 36 9% 95%;
+  --muted-foreground: 240 4% 46%;
+
+  --success: 146 100% 40%;
+  --success-foreground: 0 0% 98%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 0 0% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 240 6% 85%;
+  --input: 240 6% 85%;
+  --ring: 146 100% 45%;
+}
+
+/* ---------------------------------------------------
+   Capa base: resets y utilidades globales
+   --------------------------------------------------- */
+@layer base {
+  /* Reset de márgenes y box-model */
+  *,
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Color de borde por defecto */
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-anton tracking-wide;
+  }
+}
+
+/* ---------------------------------------------------
+   Capa de componentes personalizados
+   --------------------------------------------------- */
+@layer components {
+  .hover-glow {
+    @apply transition-all duration-300
+           hover:shadow-[0_0_15px_rgba(46,255,155,0.6)]
+           hover:border-primary/80;
+  }
+
+  .primary-gradient {
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-2 rounded-md
+           px-3 py-2 text-sm font-medium
+           transition-colors hover:bg-secondary/10;
+  }
+
+  .nav-link.active {
+    @apply bg-primary/10 text-primary;
+  }
+}
